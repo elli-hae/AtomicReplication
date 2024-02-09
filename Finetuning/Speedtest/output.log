@@ -1,0 +1,24 @@
+nohup: ignoring input
+Some weights of the model checkpoint at bert_weights_speedtest were not used when initializing BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.bias', 'cls.predictions.transform.dense.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert_weights_speedtest and are newly initialized: ['bert.pooler.dense.bias', 'classifier.bias', 'classifier.weight', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use thePyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+cpu
+['promptID', 'pairID', 'premise', 'premise_binary_parse', 'premise_parse', 'hypothesis', 'hypothesis_binary_parse', 'hypothesis_parse', 'genre', 'label']
+3500
+1050
+The model has 109,484,547 trainable parameters
+Epoch 1: train_loss: 1.1404 train_acc: 0.3279 | val_loss: 1.1096 val_acc: 0.3597
+00:57:04.73
+Epoch 2: train_loss: 1.1068 train_acc: 0.3501 | val_loss: 1.0974 val_acc: 0.3597
+00:56:18.94
+Epoch 3: train_loss: 1.1022 train_acc: 0.3548 | val_loss: 1.0955 val_acc: 0.3489
+00:55:17.99
+Epoch 4: train_loss: 1.1103 train_acc: 0.3365 | val_loss: 1.0957 val_acc: 0.3494
+00:55:24.71
+Epoch 5: train_loss: 1.1024 train_acc: 0.3486 | val_loss: 1.0963 val_acc: 0.3602
+00:55:14.21
+Fine-tuning took 4.655720371736421 hours.

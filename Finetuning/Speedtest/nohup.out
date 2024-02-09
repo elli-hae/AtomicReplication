@@ -1,0 +1,105 @@
+401 Client Error: Unauthorized for url: https://huggingface.co/bert_weights_v3/resolve/main/config.json
+cpu
+['promptID', 'pairID', 'premise', 'premise_binary_parse', 'premise_parse', 'hypothesis', 'hypothesis_binary_parse', 'hypothesis_parse', 'genre', 'label']
+10
+4
+Traceback (most recent call last):
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/configuration_utils.py", line 585, in _get_config_dict
+    resolved_config_file = cached_path(
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/file_utils.py", line 1846, in cached_path
+    output_path = get_from_cache(
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/file_utils.py", line 2050, in get_from_cache
+    _raise_for_status(r)
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/file_utils.py", line 1977, in _raise_for_status
+    request.raise_for_status()
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/requests/models.py", line 1021, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/bert_weights_v3/resolve/main/config.json
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/haehnel/Finetuning/Speedtest/Sentence_Entailment_BERT5G.py", line 200, in <module>
+    model = BertForSequenceClassification.from_pretrained("bert_weights_v3", num_labels=3)
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/modeling_utils.py", line 1268, in from_pretrained
+    config, model_kwargs = cls.config_class.from_pretrained(
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/configuration_utils.py", line 510, in from_pretrained
+    config_dict, kwargs = cls.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/configuration_utils.py", line 537, in get_config_dict
+    config_dict, kwargs = cls._get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/configuration_utils.py", line 618, in _get_config_dict
+    raise EnvironmentError(
+OSError: We couldn't connect to 'https://huggingface.co/' to load this model and it looks like bert_weights_v3 is not the path to a directory conaining a config.json file.
+Checkout your internet connection or see how to run the library in offline mode at 'https://huggingface.co/docs/transformers/installation#offline-mode'.
+Some weights of the model checkpoint at bert_weights_speedtest were not used when initializing BertForSequenceClassification: ['cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.decoder.bias']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert_weights_speedtest and are newly initialized: ['bert.pooler.dense.bias', 'bert.pooler.dense.weight', 'classifier.bias', 'classifier.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use thePyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+cpu
+['promptID', 'pairID', 'premise', 'premise_binary_parse', 'premise_parse', 'hypothesis', 'hypothesis_binary_parse', 'hypothesis_parse', 'genre', 'label']
+10
+4
+The model has 109,484,547 trainable parameters
+Epoch 1: train_loss: 1.1485 train_acc: 0.2000 | val_loss: 2.1204 val_acc: 0.2500
+00:00:06.97
+Epoch 2: train_loss: 1.1000 train_acc: 0.5000 | val_loss: 1.7850 val_acc: 0.0000
+00:00:07.62
+Epoch 3: train_loss: 0.6218 train_acc: 1.0000 | val_loss: 1.8954 val_acc: 0.0000
+00:00:07.14
+Epoch 4: train_loss: 0.5000 train_acc: 0.9000 | val_loss: 1.8497 val_acc: 0.2500
+00:00:07.38
+Epoch 5: train_loss: 0.2443 train_acc: 1.0000 | val_loss: 3.0556 val_acc: 0.2500
+00:00:07.55
+Fine-tuning with 1% of the data took 0 minutes and 36 seconds to execute.
+ Based on that,  finetuning with 100% will take 61.08870188395182 minutes and 5.322113037109375 seconds to complete.
+Some weights of the model checkpoint at bert_weights_speedtest were not used when initializing BertForSequenceClassification: ['cls.predictions.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.decoder.bias', 'cls.predictions.transform.dense.weight', 'cls.predictions.transform.LayerNorm.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert_weights_speedtest and are newly initialized: ['classifier.weight', 'classifier.bias', 'bert.pooler.dense.bias', 'bert.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use thePyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+cpu
+['promptID', 'pairID', 'premise', 'premise_binary_parse', 'premise_parse', 'hypothesis', 'hypothesis_binary_parse', 'hypothesis_parse', 'genre', 'label']
+10
+4
+The model has 109,484,547 trainable parameters
+Epoch 1: train_loss: 1.1359 train_acc: 0.1000 | val_loss: 2.3817 val_acc: 0.2500
+00:00:06.53
+Epoch 2: train_loss: 1.0956 train_acc: 0.5000 | val_loss: 1.8588 val_acc: 0.0000
+00:00:06.64
+Epoch 3: train_loss: 0.9377 train_acc: 0.5000 | val_loss: 1.3940 val_acc: 0.2500
+00:00:07.44
+Epoch 4: train_loss: 0.7252 train_acc: 0.7000 | val_loss: 1.3525 val_acc: 0.0000
+00:00:06.62
+Epoch 5: train_loss: 0.4718 train_acc: 1.0000 | val_loss: 2.3725 val_acc: 0.2500
+00:00:06.92
+Fine-tuning with 1% of the data took 0 minutes and 34 seconds to execute.
+ Based on that,  finetuning with 100% will take 56.905517975489296 minutes and 54.33107852935791 seconds to complete.
+Some weights of the model checkpoint at bert_weights_speedtest were not used when initializing BertForSequenceClassification: ['cls.predictions.decoder.bias', 'cls.predictions.transform.LayerNorm.bias', 'cls.predictions.decoder.weight', 'cls.predictions.transform.dense.bias', 'cls.predictions.bias', 'cls.predictions.transform.LayerNorm.weight', 'cls.predictions.transform.dense.weight']
+- This IS expected if you are initializing BertForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of BertForSequenceClassification were not initialized from the model checkpoint at bert_weights_speedtest and are newly initialized: ['classifier.weight', 'classifier.bias', 'bert.pooler.dense.weight', 'bert.pooler.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+/home/haehnel/miniconda3/envs/py3.10/lib/python3.10/site-packages/transformers/optimization.py:306: FutureWarning: This implementation of AdamW is deprecated and will be removed in a future version. Use thePyTorch implementation torch.optim.AdamW instead, or set `no_deprecation_warning=True` to disable this warning
+  warnings.warn(
+cpu
+['promptID', 'pairID', 'premise', 'premise_binary_parse', 'premise_parse', 'hypothesis', 'hypothesis_binary_parse', 'hypothesis_parse', 'genre', 'label']
+10
+4
+The model has 109,484,547 trainable parameters
+Epoch 1: train_loss: 1.0754 train_acc: 0.5000 | val_loss: 1.8732 val_acc: 0.2500
+00:00:08.36
+Epoch 2: train_loss: 0.9516 train_acc: 0.5000 | val_loss: 1.8401 val_acc: 0.0000
+00:00:07.54
+Epoch 3: train_loss: 0.7913 train_acc: 0.5000 | val_loss: 1.4097 val_acc: 0.2500
+00:00:07.69
+Epoch 4: train_loss: 0.4500 train_acc: 1.0000 | val_loss: 2.1139 val_acc: 0.2500
+00:00:07.25
+Epoch 5: train_loss: 0.2312 train_acc: 1.0000 | val_loss: 2.6307 val_acc: 0.2500
+00:00:06.54
+Fine-tuning with 1% of the data took 0 minutes and 37 seconds to execute.
+ Based on that,  finetuning with 100% will take 62.28997985521952 minutes and 17.398791313171387 seconds to complete.

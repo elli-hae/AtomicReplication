@@ -1,0 +1,11 @@
+If it rains and I don't find my umbrella, I will stay at home.
+If I can't find my umbrella or I oversleep, I will abort a procedure.
+Unless you finish your process, you cannot go out.
+When the system receives a message, it shall respond.
+If the system will receive a message, it will reply.
+When the device reconnects, abort the procedure.
+If the device disconnects, the system will abort the ongoing procedure.
+When the weather is nice, I go for a walk.
+There is a mastiff in the yard.
+As long as the variable is set, the program will run.
+There are biscuits on the sideboard if you want them.
